@@ -1,9 +1,10 @@
 import TeamMember from "./TeamMember";
+import { H2 } from "../shared/Typography";
 
 const Team = () => {
   return (
     <section className="p-6 rounded-lg shadow-lg bg-white max-w-3xl w-full ">
-      <h2 className="text-2xl font-bold text-left">Team</h2>
+      <H2 value="Team" />
       <p className="text-sm py-4">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua.

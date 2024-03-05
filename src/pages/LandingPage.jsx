@@ -2,13 +2,15 @@ import Header from "../layouts/Header";
 import Team from "../components/Team";
 import Container from "../layouts/Container";
 import Tokenomics from "../components/Tokenomics";
+import About from "../components/About";
 const LandingPage = () => {
   return (
     <>
       <Header />
       <Container>
-        <Team />
+        <About />
         <Tokenomics />
+        <Team />
       </Container>
     </>
   );
