@@ -4,11 +4,11 @@ import LandingPage from "./pages/LandingPage";
 
 const App = () => {
   return (
-    // <CryptoCoinContextProvider>
     <BrowserRouter>
-      <LandingPage />
+      <CryptoCoinContextProvider>
+        <LandingPage />
+      </CryptoCoinContextProvider>
     </BrowserRouter>
-    //</CryptoCoinContextProvider>
   );
 };
 

@@ -7,14 +7,17 @@ import About from "../components/About";
 import Sidebar from "../components/Sidebar";
 import Sentiment from "../components/Sentiment";
 import SubHeader from "../components/SubNavbar";
-//import Hero from "../components/Hero";
+import Hero from "../components/Hero";
+import Footer from "../components/Footer";
+import BreadCrumbs from "../components/BreadCrumbs";
 
 const LandingPage = () => {
   return (
     <>
       <Navbar />
       <Container>
-        {/* <Hero /> */}
+        <BreadCrumbs />
+        <Hero />
         <SubHeader />
         <Performance />
         <Sentiment />
@@ -22,6 +25,7 @@ const LandingPage = () => {
         <Tokenomics />
         <Team />
       </Container>
+      <Footer />
       <Sidebar />
     </>
   );

@@ -2,10 +2,11 @@ import { H2, H3 } from "../shared/Typography";
 import { FaArrowRightLong } from "react-icons/fa6";
 import tax from "../../assets/tax.jpg";
 import stock from "../../assets/stock.jpg";
+
 const About = () => {
   return (
     <section
-      className="p-6 rounded-lg shadow-lg bg-white max-w-5xl w-full my-4"
+      className="p-6 rounded-lg shadow-lg bg-white lg:w-4/5 w-full my-4"
       id="overview"
     >
       <H2 value={"About Bitcoin"} />

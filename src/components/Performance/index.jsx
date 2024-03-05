@@ -4,7 +4,7 @@ import Fundamentals from "./Fundamentals";
 const Performance = () => {
   return (
     <section
-      className="p-6 rounded-lg shadow-lg bg-white max-w-5xl w-full my-4"
+      className="p-6 rounded-lg shadow-lg bg-white lg:w-4/5 w-full my-4"
       id="fundamentals"
     >
       <H2 value="Performance" />
