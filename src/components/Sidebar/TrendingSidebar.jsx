@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { TrendingContext } from "../../context/TrendingContext";
+import { CryptoCoinContext } from "../../context/CryptoCoinContext";
 import { BiSolidUpArrow } from "react-icons/bi";
 
 import { H2 } from "../shared/Typography";
@@ -8,7 +8,7 @@ import clsx from "clsx";
 import { formatPercentage, PositiveTrend } from "../../utils";
 
 const TrendingSidebar = () => {
-  const { trendingCoins } = useContext(TrendingContext);
+  const { trendingCoins } = useContext(CryptoCoinContext);
 
   const sidebarTrendingCoinColumn = trendingCoins?.slice(0, 3);
 
@@ -35,8 +35,8 @@ const TrendingSidebar = () => {
               <span
                 className={clsx(
                   PositiveTrend(coin?.item.data.price_change_percentage_24h.inr)
-                    ? "bg-green-200 text-green-500"
-                    : "bg-red-200 text-red-500",
+                    ? "bg-green-100 text-green-500"
+                    : "bg-red-100 text-red-500",
                   `py-0.5 w-20 px-1 text-sm font-medium rounded-md flex items-center justify-center gap-1`
                 )}
               >
