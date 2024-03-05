@@ -1,5 +1,9 @@
 import { FaAngleDoubleRight } from "react-icons/fa";
+import { useParams } from "react-router-dom";
+
 const BreadCrumbs = () => {
+  const { id } = useParams();
+
   return (
     <nav className="text-gray-600 font-semibold">
       <ul className="flex items-center gap-2 h-10 py-6">
@@ -16,9 +20,9 @@ const BreadCrumbs = () => {
         <li>
           <a
             href="#"
-            className="text-slate-800 font-semibold hover:text-blue-800"
+            className="text-slate-800 font-semibold hover:text-blue-800 capitalize"
           >
-            Bitcoin
+            {id || "bitcoin"}
           </a>
         </li>
       </ul>

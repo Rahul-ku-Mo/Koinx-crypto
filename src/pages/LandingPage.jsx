@@ -1,15 +1,19 @@
+// import { useEffect } from "react";
+// import { useNavigate } from "react-router-dom";
+
 import Navbar from "../layouts/Navbar";
-import Team from "../components/Team";
 import Container from "../layouts/Container";
-import Tokenomics from "../components/Tokenomics";
+
+import BreadCrumbs from "../components/BreadCrumbs";
+import Hero from "../components/Hero";
+import SubHeader from "../components/SubNavbar";
 import Performance from "../components/Performance";
 import About from "../components/About";
-import Sidebar from "../components/Sidebar";
+import Tokenomics from "../components/Tokenomics";
 import Sentiment from "../components/Sentiment";
-import SubHeader from "../components/SubNavbar";
-import Hero from "../components/Hero";
+import Sidebar from "../components/Sidebar";
+import Team from "../components/Team";
 import Footer from "../components/Footer";
-import BreadCrumbs from "../components/BreadCrumbs";
 
 const LandingPage = () => {
   return (

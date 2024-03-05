@@ -1,7 +1,10 @@
 import clsx from "clsx";
 import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
+
 const SubNavbar = () => {
-  const [currentPath, setCurrentPath] = useState(window.location.hash);
+  const location = useLocation();
+  const [currentPath, setCurrentPath] = useState(location.hash);
 
   useEffect(() => {
     const onHashChange = () => {

@@ -1,17 +1,20 @@
+import { useParams } from "react-router-dom";
+
 import { H2, H3 } from "../shared/Typography";
 import { FaArrowRightLong } from "react-icons/fa6";
 import tax from "../../assets/tax.jpg";
 import stock from "../../assets/stock.jpg";
 
 const About = () => {
+  const { id } = useParams();
   return (
     <section
       className="p-6 rounded-lg shadow-lg bg-white lg:w-4/5 w-full my-4"
       id="overview"
     >
-      <H2 value={"About Bitcoin"} />
+      <H2 value={`About ${id}`} />
       <div className="border-b-slate-600/20 border-b-2">
-        <H3 value={"What is Bitcoin?"} />
+        <H3 value={`What is ${id}?`} />
         <p className="text-sm pb-2">
           Bitcoin is the first decentralized cryptocurrency. Nodes in the
           peer-to-peer bitcoin network verify transactions through cryptography
@@ -19,8 +22,8 @@ const About = () => {
           without central oversight.
         </p>
       </div>
-      <div className="border-b-slate-600/20 border-b-2">
-        <H3 value={"How does Bitcoin work?"} />
+      <article className="border-b-slate-600/20 border-b-2">
+        <H3 value={"Lorem Ipsum Dorot sit amet"} />
         <p className="text-sm pb-2">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Est
@@ -47,10 +50,10 @@ const About = () => {
           ullamcorper dignissim cras tincidunt lobortis feugiat. Ultrices vitae
           auctor eu augue ut lectus.
         </p>
-      </div>
+      </article>
 
       <div className="flex flex-col pt-3">
-        <H2 value={"Already Holding Bitcoin?"} />
+        <H2 value={`Already Holding ${id}?`} />
         <div className="border-b-slate-600/20 border-b-2 flex gap-6 py-2 flex-wrap md:flex-nowrap">
           <div className="rounded-md w-full hover:shadow-md bg-gradient-to-r from-emerald-400 to-cyan-800  flex gap-6 items-center p-3">
             <img

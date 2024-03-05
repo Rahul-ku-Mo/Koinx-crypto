@@ -1,13 +1,11 @@
 import { BrowserRouter } from "react-router-dom";
-import { CryptoCoinContextProvider } from "./context/CryptoCoinContext";
-import LandingPage from "./pages/LandingPage";
+// import { CryptoCoinContextProvider } from "./context/CryptoCoinContext";
+import Router from "./routes";
 
 const App = () => {
   return (
     <BrowserRouter>
-      <CryptoCoinContextProvider>
-        <LandingPage />
-      </CryptoCoinContextProvider>
+      <Router />
     </BrowserRouter>
   );
 };

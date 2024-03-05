@@ -13,8 +13,6 @@ const TrendingCarousel = () => {
     speed: 800,
     slidesToShow: 5,
     slidesToScroll: 3,
-    nextArrow: <div></div>,
-    prevArrow: <></>,
     responsive: [
       {
         breakpoint: 1024,
@@ -53,7 +51,7 @@ const TrendingCarousel = () => {
             >
               <div className="flex gap-1 items-center">
                 <img src={coin.item.thumb} alt="symbol" className="size-5" />
-                <div className="text-lg font-bold pr-1 tracking-tight">
+                <div className="text-base font-bold pr-1 tracking-tight">
                   {coin.item.symbol}
                 </div>
                 <div className="bg-green-200 text-green-500 text-xs">
@@ -82,7 +80,7 @@ const TrendingCarousel = () => {
           >
             <div className="flex gap-1 items-center">
               <img src={coin.item.thumb} alt="symbol" className="size-5" />
-              <div className="text-lg font-bold pr-1 tracking-tight">
+              <div className="text-base font-bold pr-1 tracking-tight">
                 {coin.item.symbol}
               </div>
               <div className="bg-green-200 text-green-500 text-xs">+0.52%</div>

@@ -1,12 +1,16 @@
 // TradingViewWidget.jsx
 import { useEffect, useRef, memo } from "react";
 
-function TradingViewWidget() {
+function TradingViewWidget({ coin_id }) {
   const container = useRef();
 
   useEffect(() => {
-    if (!document.getElementById("tradingViewScript")) {
-      const script = document.createElement("script");
+    const existingScript = document.getElementById("tradingViewScript");
+    if (existingScript) {
+      existingScript.remove();
+    }
+
+    const script = document.createElement("script");
       script.id = "tradingViewScript";
       script.src =
         "https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js";
@@ -16,7 +20,7 @@ function TradingViewWidget() {
         {
           "symbols": [
             [
-              "COINBASE:BTCUSD|1D"
+              "COINBASE:${coin_id}USD|1D"
             ]
           ],
           "chartOnly": false,
@@ -53,8 +57,7 @@ function TradingViewWidget() {
           ]
         }`;
       container.current.appendChild(script);
-    }
-  }, []);
+  }, [coin_id]);
 
   return (
     <div className="tradingview-widget-container" ref={container}>

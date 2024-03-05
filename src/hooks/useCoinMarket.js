@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const useCoinMarket = () => {
+const useCoinMarket = (id) => {
   const [coinMarketDetail, setCoinMarketDetail] = useState([]);
 
   useEffect(() => {
@@ -8,7 +8,7 @@ const useCoinMarket = () => {
       const response = await fetch(
         `${
           import.meta.env.VITE_APP_API_URL
-        }/coins/markets?vs_currency=usd&ids=bitcoin&order=market_cap_desc&per_page=100&page=1&sparkline=false&locale=en&precision=2`
+        }/coins/markets?vs_currency=usd&ids=${id}&order=market_cap_desc&per_page=100&page=1&sparkline=false&locale=en&precision=2`
       );
 
       const data = await response.json();
@@ -16,7 +16,7 @@ const useCoinMarket = () => {
     };
 
     fetchCoinMarket();
-  }, []);
+  }, [id]);
 
   return { coinMarketDetail };
 };
