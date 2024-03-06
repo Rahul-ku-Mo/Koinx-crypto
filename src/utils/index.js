@@ -1,6 +1,6 @@
 import { format, formatDistanceToNow, parseISO } from "date-fns";
 
-export const formatPercentage = (value) => Math.abs(value).toFixed(2);
+export const formatPercentage = (value) => Math.abs(value)?.toFixed(2);
 
 export const PositiveTrend = (value) => value > 0;
 
