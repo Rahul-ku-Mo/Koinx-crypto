@@ -1,16 +1,11 @@
 import { H2 } from "../shared/Typography";
 import Fundamentals from "./Fundamentals";
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import { CryptoCoinContext } from "../../context/CryptoCoinContext";
-import { lerp } from "../../utils";
+
 import PerformanceSlider from "./PerformanceSlider";
 const Performance = () => {
   const { coinMarketDetail } = useContext(CryptoCoinContext);
-  const [sliderValue24, setSliderValue24] = useState(0);
-
-  const [sliderValue52, setSliderValue52] = useState(0);
-  const left = (sliderValue52 / 100) * 96;
-  const mappedValue = lerp(sliderValue24, 15115.15, 15845.12);
 
   return (
     <section
