@@ -13,7 +13,7 @@ const TrendingSidebar = () => {
   const sidebarTrendingCoinColumn = trendingCoins?.slice(0, 3);
 
   return (
-    <div className="bg-white rounded-lg max-w-md p-4 my-2">
+    <div className="bg-white rounded-lg max-w-md p-4 my-4">
       <H2 value={"Trending Coins (24h)"} />
       <div className="flex flex-col">
         {sidebarTrendingCoinColumn.map((coin) => (
@@ -34,7 +34,7 @@ const TrendingSidebar = () => {
             {
               <span
                 className={clsx(
-                  PositiveTrend(coin?.item.data.price_change_percentage_24h.inr)
+                  PositiveTrend(coin?.item.data.price_change_percentage_24h.usd)
                     ? "bg-green-100 text-green-500"
                     : "bg-red-100 text-red-500",
                   `py-0.5 w-20 px-1 text-sm font-medium rounded-md flex items-center justify-center gap-1`
@@ -44,14 +44,14 @@ const TrendingSidebar = () => {
                   className={clsx(
                     "text-xs",
                     PositiveTrend(
-                      coin?.item.data.price_change_percentage_24h.inr
+                      coin?.item.data.price_change_percentage_24h.usd
                     )
                       ? ""
                       : "rotate-180"
                   )}
                 />
                 {formatPercentage(
-                  coin?.item.data.price_change_percentage_24h.inr
+                  coin?.item.data.price_change_percentage_24h.usd
                 )}
                 %
               </span>

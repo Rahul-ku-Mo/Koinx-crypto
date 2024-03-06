@@ -4,6 +4,8 @@ import "slick-carousel/slick/slick-theme.css";
 import { H2 } from "../shared/Typography";
 import { useContext } from "react";
 import { CryptoCoinContext } from "../../context/CryptoCoinContext";
+import clsx from "clsx";
+import { PositiveTrend } from "../../utils";
 
 const TrendingCarousel = () => {
   const { trendingCoins } = useContext(CryptoCoinContext);
@@ -54,13 +56,28 @@ const TrendingCarousel = () => {
                 <div className="text-base font-bold pr-1 tracking-tight">
                   {coin.item.symbol}
                 </div>
-                <div className="bg-green-200 text-green-500 text-xs">
-                  +0.52%
+                <div
+                  className={clsx(
+                    "text-xs",
+                    PositiveTrend(
+                      coin.item.data.price_change_percentage_24h.usd
+                    )
+                      ? "text-green-500 bg-green-200"
+                      : "text-red-500 bg-red-200"
+                  )}
+                >
+                  {PositiveTrend(coin.item.data.price_change_percentage_24h.usd)
+                    ? "+"
+                    : "-"}
+                  {Math.abs(
+                    coin.item.data.price_change_percentage_24h.usd
+                  ).toFixed(2) + "%"}
                 </div>
               </div>
-              <div className="text-lg font-semibold">
-                {coin.item.data.price}
-              </div>
+              <div
+                className="text-lg font-semibold"
+                dangerouslySetInnerHTML={{ __html: coin.item.data.price }}
+              ></div>
               <img
                 src={coin.item.data.sparkline}
                 alt="svg"
@@ -83,7 +100,23 @@ const TrendingCarousel = () => {
               <div className="text-base font-bold pr-1 tracking-tight">
                 {coin.item.symbol}
               </div>
-              <div className="bg-green-200 text-green-500 text-xs">+0.52%</div>
+              <div
+                  className={clsx(
+                    "text-xs",
+                    PositiveTrend(
+                      coin.item.data.price_change_percentage_24h.usd
+                    )
+                      ? "text-green-500 bg-green-200"
+                      : "text-red-500 bg-red-200"
+                  )}
+                >
+                  {PositiveTrend(coin.item.data.price_change_percentage_24h.usd)
+                    ? "+"
+                    : "-"}
+                  {Math.abs(
+                    coin.item.data.price_change_percentage_24h.usd
+                  ).toFixed(2) + "%"}
+                </div>
             </div>
             <div
               className="text-lg font-semibold"
