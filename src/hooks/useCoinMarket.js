@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 const useCoinMarket = (id) => {
   const [coinMarketDetail, setCoinMarketDetail] = useState([]);
 
+  const [description, setDescription] = useState("");
+
   useEffect(() => {
     const fetchCoinMarket = async () => {
       const response = await fetch(
@@ -15,10 +17,23 @@ const useCoinMarket = (id) => {
       setCoinMarketDetail(data);
     };
 
+    const fetchCoinDescription = async () => {
+      const response = await fetch(
+        `${
+          import.meta.env.VITE_APP_API_URL
+        }/coins/${id}?localization=false&tickers=false&market_data=true&community_data=false&developer_data=false`
+      );
+
+      const data = await response.json();
+
+      setDescription(data.description.en);
+    };
+
     fetchCoinMarket();
+    fetchCoinDescription();
   }, [id]);
 
-  return { coinMarketDetail };
+  return { coinMarketDetail, description };
 };
 
 export default useCoinMarket;

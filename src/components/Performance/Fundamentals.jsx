@@ -8,7 +8,7 @@ import {
   formattedNum,
 } from "../../utils/index";
 const Fundamentals = ({ coinMarketDetail }) => {
-  const volumeIsToMarkteCap = (
+  const volumeIsToMarketCap = (
     coinMarketDetail[0]?.total_volume / coinMarketDetail[0]?.market_cap
   ).toFixed(2);
 
@@ -39,8 +39,10 @@ const Fundamentals = ({ coinMarketDetail }) => {
             </span>
           </div>
           <div className="text-slate-600/80 text-sm py-3 border-b-slate-700/20 border-b-2 flex justify-between">
-            7d Low / 7d High
-            <span className="text-black text-right">$16325.49 / $16415.49</span>
+            All Low / All High
+            <span className="text-black text-right">
+              $ ${coinMarketDetail[0]?.atl} / $ ${coinMarketDetail[0]?.ath}
+            </span>
           </div>
           <div className="text-slate-600/80 text-sm py-3 border-b-slate-700/20 border-b-2 flex justify-between">
             Trading Volume
@@ -64,11 +66,14 @@ const Fundamentals = ({ coinMarketDetail }) => {
           </div>
           <div className="text-slate-600/80 text-sm py-3 border-b-slate-700/20 border-b-2 flex justify-between">
             Market Cap Dominance
-            <span className="text-black text-right"> 38.343%</span>
+            <span className="text-black text-right">
+              {" "}
+              {volumeIsToMarketCap * 12}%
+            </span>
           </div>
           <div className="text-slate-600/80 text-sm py-3 border-b-slate-700/20 border-b-2 flex justify-between">
             Volume / Market Cap
-            <span className="text-black text-right">{volumeIsToMarkteCap}</span>
+            <span className="text-black text-right">{volumeIsToMarketCap}</span>
           </div>
           <div className="text-slate-600/80 text-sm py-3 border-b-slate-700/20 border-b-2 flex justify-between items-center">
             All Time High

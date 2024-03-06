@@ -5,12 +5,8 @@ function TradingViewWidget({ coin_id }) {
   const container = useRef();
 
   useEffect(() => {
-    const existingScript = document.getElementById("tradingViewScript");
-    if (existingScript) {
-      existingScript.remove();
-    }
-
-    const script = document.createElement("script");
+    if (!document.getElementById("tradingViewScript")) {
+      const script = document.createElement("script");
       script.id = "tradingViewScript";
       script.src =
         "https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js";
@@ -57,6 +53,7 @@ function TradingViewWidget({ coin_id }) {
           ]
         }`;
       container.current.appendChild(script);
+    }
   }, [coin_id]);
 
   return (
