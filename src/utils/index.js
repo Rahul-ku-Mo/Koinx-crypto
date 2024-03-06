@@ -22,5 +22,5 @@ export const formattedNum = (num) => {
 };
 
 export const lerp = (value, outputMin, outputMax) => {
-  return (outputMin + ((outputMax - outputMin) / 100) * value).toFixed(2);
+  return (outputMin + ((outputMax - outputMin) / 100) * value);
 };
