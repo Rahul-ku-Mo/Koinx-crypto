@@ -7,9 +7,7 @@ import PerformanceSlider from "./PerformanceSlider";
 const Performance = () => {
   const { coinMarketDetail } = useContext(CryptoCoinContext);
 
-  console.log(coinMarketDetail);
-
-  if (coinMarketDetail.status.error_code === 429)
+  if (coinMarketDetail?.status?.error_code === 429)
     return (
       <section
         className="p-6 rounded-lg shadow-lg bg-white lg:w-4/5 w-full my-4"
