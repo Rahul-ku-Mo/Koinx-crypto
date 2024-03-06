@@ -9,10 +9,12 @@ export const CryptoCoinContextProvider = ({ children }) => {
 
   const { trendingCoins, isLoading } = useTrendingCoins();
 
-  const { coinMarketDetail } = useCoinMarket(id);
+  const { coinMarketDetail, description } = useCoinMarket(id);
 
   return (
-    <CryptoCoinContext.Provider value={{ trendingCoins, isLoading, coinMarketDetail }}>
+    <CryptoCoinContext.Provider
+      value={{ trendingCoins, isLoading, coinMarketDetail, description }}
+    >
       {children}
     </CryptoCoinContext.Provider>
   );

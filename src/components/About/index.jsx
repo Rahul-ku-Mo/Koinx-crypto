@@ -14,8 +14,8 @@ const About = () => {
   description =
     description ||
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Est ullamcorper eget nulla facilisi etiam dignissim. Ut tristique et egestas quis ipsum suspendisse ultrices gravida dictum. Morbi tincidunt augue interdum velit euismod.";
-  
-    return (
+
+  return (
     <section
       className="p-6 rounded-lg shadow-lg bg-white lg:w-4/5 w-full my-4"
       id="overview"
@@ -23,7 +23,10 @@ const About = () => {
       <H2 value={`About ${id}`} />
       <div className="border-b-slate-600/20 border-b-2">
         <H3 value={`What is ${id}?`} />
-        <p className="text-sm pb-2">{description}</p>
+        <p
+          className="text-sm pb-2"
+          dangerouslySetInnerHTML={{ __html: description }}
+        ></p>
       </div>
       <article className="border-b-slate-600/20 border-b-2">
         <H3 value={"Lorem Ipsum Dorot sit amet"} />
