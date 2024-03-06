@@ -1,5 +1,6 @@
 import { lerp } from "../../utils";
 import { useState } from "react";
+
 const PerformanceSlider = ({ low = 15115.15, high = 15845.12 }) => {
   const [sliderValue, setSliderValue] = useState(low);
 
